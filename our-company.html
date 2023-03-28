@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Our-Company - Torn Joyous Flamingo</title>
+    <meta property="og:title" content="Our-Company - Torn Joyous Flamingo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <style>
+
+                 function validateForm() {
+
+                    var fname = document.forms["ApplicationForm"]["fname"].value;
+                    var lname = document.forms["ApplicationForm"]["lname"].value;
+                     var email = document.forms["ApplicationForm"]["email"].value;
+                     var phone = document.forms["ApplicationForm"]["phone"].value;
+                     var myfile = document.forms["ApplicationForm"]["myfile"].value;
+                     var role = document.querySelector('select[name="Role"]');
+                      var flag = 0;
+
+                    if (fname =="")
+                    {
+                      alert("Please enter a valid forename and do not leave this field blank");
+                      document.getElementsByClassName("warningfname")[0].innerHTML = " * Required";
+                      flag=1;
+
+                    }else
+                        document.getElementsByClassName("warningfname")[0].innerHTML = "";
+
+                    if (lname =="")
+                    {
+                      alert("Please enter a valid surname and do not leave this field blank");
+                      document.getElementsByClassName("warninglname")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warninglname")[0].innerHTML = "";
+
+                    if (email =="")
+                    {
+                      alert("Please enter a valid email address and do not leave this field blank");
+                      document.getElementsByClassName("warningemail")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningemail")[0].innerHTML = "";
+
+                   if (phone =="")
+                    {
+                      alert("Please enter a valid phone number and do not leave this field blank");
+                      document.getElementsByClassName("warningphonenumber")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningphonenumber")[0].innerHTML = "";
+
+                     if (role.value =="")
+                    {
+                      alert("Please choose a job role");
+                      document.getElementsByClassName("warningrole")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningrole")[0].innerHTML = "";
+
+                  if (myfile =="")
+                    {
+                      alert("Please attach a recent CV or covering letter");
+                      document.getElementsByClassName("warningmyfile")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningmyfile")[0].innerHTML = "";
+
+
+                    if (flag==0)
+                      {
+                      var subject= "Job Application: " + lname + " " + fname;
+                      var body = "Please could you consider me for the position of: " + role.value;
+                      body += "\r\n My phone number is: " + phone;
+                      body += "\r\n My email address is: " + email;
+                      var uri = "mailto:adminjobapp@hotbeans.co.uk?subject= ";
+                      uri += encodeURIComponent(subject);
+                      uri += "&body=";
+                      uri += encodeURIComponent(body);
+                      window.open(uri);
+                          return true;
+                      } else
+
+                  return false;
+                  }
+
+
+
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./our-company.css" rel="stylesheet" />
+
+      <div class="our-company-container">
+        <div id="Header" class="our-company-container01">
+          <img
+            id="Logo"
+            alt="image"
+            src="public/playground_assets/image_2023-03-18_191505362-200h.png"
+            class="our-company-image"
+          />
+          <h1 class="our-company-text">HotBeans Web</h1>
+          <div id="Line" class="our-company-container02"></div>
+          <a href="index.html" class="our-company-navlink">
+            <p id="Home Button" class="our-company-text01">Home</p>
+          </a>
+          <a href="our-company.html" class="our-company-navlink1">
+            <p id="Our Company Button" class="our-company-text02">
+              Our Company
+            </p>
+          </a>
+          <a href="careers.html" class="our-company-navlink2">
+            <p id="Careers Button" class="our-company-text03">
+              <span>Careers</span>
+              <br />
+            </p>
+          </a>
+          <a href="tel:07513316577" class="our-company-link">
+            <p class="our-company-text06">07513316577</p>
+          </a>
+          <a
+            href="https://www.facebook.com/HotBeans2021"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="our-company-link1"
+          >
+            <img
+              id="Facebook Button"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204443753-300h.png"
+              class="our-company-image01"
+            />
+          </a>
+          <a
+            href="https://instagram.com/hotbeanweb?igshid=YmMyMTA2M2Y="
+            target="_blank"
+            rel="noreferrer noopener"
+            class="our-company-link2"
+          >
+            <img
+              id="Instagram Button"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204525024-300h.png"
+              class="our-company-image02"
+            />
+          </a>
+        </div>
+        <div id="Our Company Intro" class="our-company-container03">
+          <div class="our-company-container04">
+            <h1 class="our-company-text07">Our Company</h1>
+            <h2 class="our-company-text08">Commitment to Excellence</h2>
+            <p class="our-company-text09">
+              We solve problems and develop products and designs that help
+              position our clients ahead of their competitors. Through focused
+              research and preparation, we understand the vision and
+              requirements of each project, which means we are able to deliver
+              results that make a big impact.
+            </p>
+          </div>
+        </div>
+        <div id="Image Section 1" class="our-company-container05">
+          <div class="our-company-container06">
+            <img
+              id="3A"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_090715986-400h.png"
+              class="our-company-image03"
+            />
+            <h1 class="our-company-text10">
+              <br />
+              <br />
+              <br />
+              <br />
+              <span>Corporate Branding</span>
+              <br />
+            </h1>
+            <h3 class="our-company-text17">Bringing Ideas to Life</h3>
+          </div>
+          <div class="our-company-container07">
+            <h1 class="our-company-text18">
+              <br />
+              <br />
+              <br />
+              <br />
+              <span>Landing Page</span>
+              <br />
+              <span>Animation</span>
+              <br />
+            </h1>
+            <h3 class="our-company-text27">Sleek and Unforgetable</h3>
+            <img
+              id="3B"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_090728277-400h.png"
+              class="our-company-image04"
+            />
+          </div>
+          <div class="our-company-container08">
+            <img
+              id="3C"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_090257968-400h.png"
+              class="our-company-image05"
+            />
+            <h1 class="our-company-text28">
+              <br />
+              <br />
+              <br />
+              <br />
+              <span>Web Design</span>
+              <br />
+            </h1>
+            <h3 class="our-company-text35">Breakthrough Results</h3>
+          </div>
+          <div class="our-company-container09">
+            <h1 class="our-company-text36">
+              <br />
+              <br />
+              <br />
+              <span>Conceptual App</span>
+              <br />
+              <span>Design</span>
+              <br />
+            </h1>
+            <h3 class="our-company-text44">Total Package</h3>
+            <img
+              id="3D"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_090722740-400h.png"
+              class="our-company-image06"
+            />
+          </div>
+        </div>
+        <div id="Services Section" class="our-company-container10">
+          <h1 class="our-company-text45">Our Services</h1>
+          <div class="our-company-container11">
+            <img
+              id="4A"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_090736194-600h.png"
+              class="our-company-image07"
+            />
+            <div class="our-company-container12">
+              <h1 class="our-company-text46">Website Design</h1>
+              <p class="our-company-text47">
+                Our team at HotBeans Web understands how important it is for
+                clients to create a lasting visual impact. With top-notch
+                Website Design, we can help position your brand one step ahead
+                of the competition. Our team of creatives is committed to
+                unparalleled design.
+              </p>
+            </div>
+          </div>
+          <div class="our-company-container13">
+            <img
+              id="4B"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_090742218-600h.png"
+              class="our-company-image08"
+            />
+            <div class="our-company-container14">
+              <h1 class="our-company-text48">Logo Design</h1>
+              <p class="our-company-text49">
+                <span>
+                  We want all of our clients to experience the impressive level
+                  of skill and professionalism of our designers when working
+                  with HotBeans Web. All of our services, especially this one,
+                  exist to make your life more beautiful. You can trust us to
+                  provide everything you need.
+                </span>
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="our-company-container15">
+            <img
+              id="4C"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_090749768-600h.png"
+              class="our-company-image09"
+            />
+            <div class="our-company-container16">
+              <h1 class="our-company-text52">UX Design</h1>
+              <p class="our-company-text53">
+                This is one of the most popular client services that we offer.
+                From the initial design concept to the final outcome, our team
+                works tirelessly toward effectively bringing your vision to
+                life. We work with all of our clients to ensure their needs are
+                met.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="Meet the Team" class="our-company-container17">
+          <div id="Intro Section" class="our-company-container18">
+            <h1 class="our-company-text54">Meet the Team</h1>
+            <h1 class="our-company-text55">Artistry at Its Best</h1>
+            <p class="our-company-text56">
+              The team at HotBeans Web includes experienced and passionate
+              creatives who work hard and are whole-heartedly committed to what
+              they do. We take a multidisciplinary approach and design for a
+              broad range of sectors and are keenly aware of the importance of
+              art and culture in ensuring design relevance
+            </p>
+          </div>
+          <div class="our-company-container19">
+            <img
+              id="5A"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_100044518-300h.png"
+              class="our-company-image10"
+            />
+            <h1 class="our-company-text57">Morgan James</h1>
+            <h2 class="our-company-text58">Junior Web Developer</h2>
+            <p class="our-company-text59">
+              In just under a year Jamie Lane has become a source of inspiration
+              and an integral part of the team here at HotBeans Web. Her
+              willingness to help and excellent problem-solving abilities make
+              Jamie Lane one of the best junior web developers we could hope for
+            </p>
+          </div>
+          <div class="our-company-container20">
+            <img
+              id="5B"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_100032405-300h.png"
+              class="our-company-image11"
+            />
+            <h1 class="our-company-text60">Morgan James</h1>
+            <h2 class="our-company-text61">Creative Director</h2>
+            <p class="our-company-text62">
+              Morgan James has an unyielding passion for art and design and is
+              an important part of the DNA of HotBeans Web. He is always coming
+              up with ways to make sure every project we take on succeeds beyond
+              our expectations
+            </p>
+          </div>
+          <div class="our-company-container21">
+            <img
+              id="5C"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_100039053-300h.png"
+              class="our-company-image12"
+            />
+            <h1 class="our-company-text63">Reese Whiteman</h1>
+            <h2 class="our-company-text64">Trainee Web Developer</h2>
+            <p class="our-company-text65">
+              It didn’t take long for Reese Whiteman to make a big impact as our
+              newest trainee web developer. In fact, we often wonder how we
+              managed without them! It’s no exaggeration to say they have
+              quickly become an invaluable asset to the HotBeans Web family
+            </p>
+          </div>
+        </div>
+        <div id="Footer" class="our-company-container22">
+          <h1 class="our-company-text66">HotBeans Web</h1>
+          <h1 class="our-company-text67">
+            <span>Address</span>
+            <br />
+            <span>10 Bishops Square, London,</span>
+            <br />
+            <span>E1 6EG, UK</span>
+            <br />
+          </h1>
+          <h1 class="our-company-text74">
+            <span>Contact</span>
+            <br />
+            <span>07513316577</span>
+            <br />
+            <span>contactus@hotbeans.co.uk</span>
+            <br />
+          </h1>
+          <h1 class="our-company-text81">
+            <span>Follow</span>
+            <br />
+          </h1>
+          <a
+            href="https://www.facebook.com/HotBeans2021"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="our-company-link3"
+          >
+            <img
+              id="Facebook button 2"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204443753-300h.png"
+              class="our-company-image13"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/hotbeanweb/?igshid=YmMyMTA2M2Y%3D"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="our-company-link4"
+          >
+            <img
+              id="Instagram Button 2"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204525024-300h.png"
+              class="our-company-image14"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

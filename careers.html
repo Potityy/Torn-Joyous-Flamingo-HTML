@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Careers - Torn Joyous Flamingo</title>
+    <meta property="og:title" content="Careers - Torn Joyous Flamingo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <style>
+
+                 function validateForm() {
+
+                    var fname = document.forms["ApplicationForm"]["fname"].value;
+                    var lname = document.forms["ApplicationForm"]["lname"].value;
+                     var email = document.forms["ApplicationForm"]["email"].value;
+                     var phone = document.forms["ApplicationForm"]["phone"].value;
+                     var myfile = document.forms["ApplicationForm"]["myfile"].value;
+                     var role = document.querySelector('select[name="Role"]');
+                      var flag = 0;
+
+                    if (fname =="")
+                    {
+                      alert("Please enter a valid forename and do not leave this field blank");
+                      document.getElementsByClassName("warningfname")[0].innerHTML = " * Required";
+                      flag=1;
+
+                    }else
+                        document.getElementsByClassName("warningfname")[0].innerHTML = "";
+
+                    if (lname =="")
+                    {
+                      alert("Please enter a valid surname and do not leave this field blank");
+                      document.getElementsByClassName("warninglname")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warninglname")[0].innerHTML = "";
+
+                    if (email =="")
+                    {
+                      alert("Please enter a valid email address and do not leave this field blank");
+                      document.getElementsByClassName("warningemail")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningemail")[0].innerHTML = "";
+
+                   if (phone =="")
+                    {
+                      alert("Please enter a valid phone number and do not leave this field blank");
+                      document.getElementsByClassName("warningphonenumber")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningphonenumber")[0].innerHTML = "";
+
+                     if (role.value =="")
+                    {
+                      alert("Please choose a job role");
+                      document.getElementsByClassName("warningrole")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningrole")[0].innerHTML = "";
+
+                  if (myfile =="")
+                    {
+                      alert("Please attach a recent CV or covering letter");
+                      document.getElementsByClassName("warningmyfile")[0].innerHTML = " * Required"
+                      flag=1;
+                    } else
+                        document.getElementsByClassName("warningmyfile")[0].innerHTML = "";
+
+
+                    if (flag==0)
+                      {
+                      var subject= "Job Application: " + lname + " " + fname;
+                      var body = "Please could you consider me for the position of: " + role.value;
+                      body += "\r\n My phone number is: " + phone;
+                      body += "\r\n My email address is: " + email;
+                      var uri = "mailto:adminjobapp@hotbeans.co.uk?subject= ";
+                      uri += encodeURIComponent(subject);
+                      uri += "&body=";
+                      uri += encodeURIComponent(body);
+                      window.open(uri);
+                          return true;
+                      } else
+
+                  return false;
+                  }
+
+
+
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./careers.css" rel="stylesheet" />
+
+      <div class="careers-container">
+        <div id="Header" class="careers-container01">
+          <img
+            id="Logo"
+            alt="image"
+            src="public/playground_assets/image_2023-03-18_191505362-200h.png"
+            class="careers-image"
+          />
+          <h1 class="careers-text">HotBeans Web</h1>
+          <div id="Line" class="careers-container02"></div>
+          <a href="index.html" class="careers-navlink">
+            <p id="Home Button" class="careers-text001">Home</p>
+          </a>
+          <a href="our-company.html" class="careers-navlink1">
+            <p id="Our Company Button" class="careers-text002">Our Company</p>
+          </a>
+          <a href="careers.html" class="careers-navlink2">
+            <p id="Careers Button" class="careers-text003">
+              <span>Careers</span>
+              <br />
+            </p>
+          </a>
+          <a href="tel:07513316577" class="careers-link">
+            <p class="careers-text006">07513316577</p>
+          </a>
+          <a
+            href="https://www.facebook.com/HotBeans2021"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="careers-link01"
+          >
+            <img
+              id="Facebook Button"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204443753-300h.png"
+              class="careers-image01"
+            />
+          </a>
+          <a
+            href="https://instagram.com/hotbeanweb?igshid=YmMyMTA2M2Y="
+            target="_blank"
+            rel="noreferrer noopener"
+            class="careers-link02"
+          >
+            <img
+              id="Instagram Button"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204525024-300h.png"
+              class="careers-image02"
+            />
+          </a>
+        </div>
+        <div id="Intro Section" class="careers-container03">
+          <h1 class="careers-text007">Fancy working with us?</h1>
+          <p class="careers-text008">
+            <span>
+              The team at HotBeans Web includes experienced and passionate
+              creatives who work hard and are whole-heartedly committed to what
+              they do. We take a multidisciplinary approach and design for a
+              broad range of sectors and are keenly aware of the importance of
+              art and culture in ensuring design relevance. Sound like somewhere
+              you would fit in? look below for our available jobs:
+            </span>
+            <br />
+          </p>
+        </div>
+        <div id="Job 1" class="careers-container04">
+          <img
+            id="6A"
+            alt="image"
+            src="public/playground_assets/image_2023-03-20_222517261-700w.png"
+            class="careers-image03"
+          />
+          <div class="careers-container05">
+            <h1 class="careers-text011">Advanced Web Developer</h1>
+            <h2 class="careers-text012">From £40,000 per year</h2>
+            <p class="careers-text013">
+              <span>
+                We are seeking a talented and experienced Web Designer to join
+                our team. As a Web Designer, you will be responsible for
+                creating and implementing visually stunning, user-friendly, and
+                responsive websites for our clients.
+              </span>
+              <br />
+              <br />
+              <span>Responsibilities:</span>
+              <br />
+              <span>
+                • Collaborate with clients and team members to develop website
+                design concepts that align with clients' goals and brand
+                identities.
+              </span>
+              <br />
+              <span>
+                • Create wireframes, mock-ups, and prototypes to communicate
+                design ideas to clients and team members.
+              </span>
+              <br />
+              <span>
+                • Design and develop responsive and engaging user interfaces for
+                websites, web applications, and mobile apps.
+              </span>
+              <br />
+              <span>
+                • Ensure designs are properly implemented by working closely
+                with developers and quality assurance teams.
+              </span>
+              <br />
+              <span>
+                • Stay up to date with the latest design trends, tools, and
+                technologies to continuously improve our design processes and
+                outputs.
+              </span>
+              <br />
+              <br />
+              <span>Requirements:</span>
+              <br />
+              <span>
+                • Bachelor's degree in graphic design, web design, or a related
+                field.
+              </span>
+              <br />
+              <span>
+                • Proven experience in designing and developing visually
+                appealing and user-friendly websites.
+              </span>
+              <br />
+              <span>
+                • Strong skills in design software such as Adobe Creative Suite,
+                Sketch, Figma, or similar.
+              </span>
+              <br />
+              <span>• Proficient in HTML, CSS, and JavaScript.</span>
+              <br />
+              <span>
+                • Excellent communication skills, both verbal and written.
+              </span>
+              <br />
+              <span>
+                • Ability to manage multiple projects simultaneously while
+                meeting tight deadlines.
+              </span>
+              <br />
+              <span>
+                • Strong attention to detail and a commitment to producing
+                high-quality work.
+              </span>
+              <br />
+              <span>
+                • A portfolio of web design work showcasing your skills and
+                design style.
+              </span>
+              <br />
+              <br />
+              <br />
+              <span>
+                We are an equal opportunity employer and welcome applicants from
+                all backgrounds. We offer a supportive and inclusive work
+                environment, ongoing training and development opportunities, and
+                competitive compensation and benefits packages.
+              </span>
+              <br />
+              <span>
+                If you are a highly motivated and talented Web Designer with a
+                passion for creating innovative and effective web designs, we
+                would love to hear from you.
+              </span>
+              <br />
+            </p>
+            <a
+              href="#Application Form"
+              name="Apply"
+              class="careers-link03 button"
+            >
+              <p>
+                <span>Apply</span>
+                <br />
+                <br />
+              </p>
+            </a>
+          </div>
+        </div>
+        <div id="Job 2" class="careers-container06">
+          <div class="careers-container07">
+            <h1 class="careers-text058">Junior Role Web Developer</h1>
+            <h1 class="careers-text059">From £26,000 per year</h1>
+            <p class="careers-text060">
+              <span>
+                We are looking for a creative and passionate Junior Web Designer
+                to join our team. As a Junior Web Designer, you will work
+                closely with our senior designers to create and implement
+                innovative web designs that meet our clients' needs.
+              </span>
+              <br class="careers-text062" />
+              <br />
+              <br />
+              <span>Responsibilities:</span>
+              <br />
+              <span>
+                • Collaborate with our senior designers to create high-quality
+                web designs that meet our clients' requirements.
+              </span>
+              <br />
+              <span>
+                • Design user-friendly and engaging interfaces for websites, web
+                applications, and mobile apps.
+              </span>
+              <br />
+              <span>
+                • Develop wireframes, mock-ups, and prototypes for web projects.
+              </span>
+              <br />
+              <span>
+                • Work with developers to ensure that designs are accurately
+                implemented.
+              </span>
+              <br />
+              <span>
+                • Keep up to date with the latest design trends, tools, and
+                technologies.
+              </span>
+              <br class="careers-text076" />
+              <br />
+              <br />
+              <span>Requirements:</span>
+              <br />
+              <span>
+                • A degree or diploma in graphic design, web design, or a
+                related field.
+              </span>
+              <br />
+              <span>
+                • Proficiency in design software such as Adobe Creative Suite,
+                Sketch, Figma, or similar.
+              </span>
+              <br />
+              <span>
+                • Knowledge of HTML, CSS, and JavaScript is an advantage.
+              </span>
+              <br />
+              <span>
+                • Strong communication skills, both verbal and written.
+              </span>
+              <br />
+              <span>
+                • Ability to work effectively in a team environment and meet
+                tight deadlines.
+              </span>
+              <br />
+              <span>
+                • A portfolio of web design work showcasing your skills and
+                design style.
+              </span>
+              <br class="careers-text092" />
+              <br class="careers-text093" />
+              <br />
+              <span>
+                We are an equal opportunity employer and welcome applicants from
+                all backgrounds. We offer a supportive and inclusive work
+                environment, ongoing training and development opportunities, and
+                competitive compensation and benefits packages. If you are a
+                creative and motivated individual with a passion for web design,
+                we would love to hear from you.
+              </span>
+              <br />
+            </p>
+            <a
+              href="#Application Form"
+              name="Apply"
+              class="careers-link04 button"
+            >
+              <p>
+                <span>Apply</span>
+                <br />
+                <br />
+              </p>
+            </a>
+          </div>
+          <img
+            id="6B"
+            alt="image"
+            src="public/playground_assets/image_2023-03-20_222540643-700w.png"
+            class="careers-image04"
+          />
+        </div>
+        <div id="Application Form" class="careers-container08">
+          <img
+            id="6C"
+            alt="image"
+            src="public/playground_assets/image_2023-03-20_222725444-500h.png"
+            class="careers-image05"
+          />
+          <div class="careers-container09">
+            <h1 class="careers-text101">Come Work With Us</h1>
+            <p class="careers-text102">Join the Team</p>
+            <form
+              id="ApplicationForm"
+              name="Application Form"
+              class="careers-form"
+            >
+              <div class="careers-container10">
+                <p id="First Name" class="careers-text103">First Name *</p>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  required=""
+                  placeholder="Enter your email"
+                  class="careers-textinput input"
+                />
+                <p id="Email" class="careers-text104">Email *</p>
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  required=""
+                  placeholder="Enter your first name"
+                  class="careers-textinput1 input"
+                />
+                <p id="Position" class="careers-text105">Position *</p>
+                <select required="" class="careers-select Content">
+                  <option value="Job 1" selected="">
+                    Advanced Web Developer
+                  </option>
+                  <option value="Job 2">Junior Role Web Developer</option>
+                </select>
+              </div>
+              <div class="careers-container11">
+                <p id="Last Name" class="careers-text106">Last Name *</p>
+                <input
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  required=""
+                  placeholder="Enter your last name"
+                  class="careers-textinput2 input"
+                />
+                <p id="Phone" class="careers-text107">Phone</p>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone"
+                  class="careers-textinput3 input"
+                />
+                <p id="Date of Birth" class="careers-text108">Date of Birth*</p>
+                <input
+                  type="text"
+                  id="DOB"
+                  name="DOB"
+                  required=""
+                  placeholder="DD/MM/YYYY"
+                  class="careers-textinput4 input"
+                />
+              </div>
+              <button type="reset" class="careers-button button">Reset</button>
+              <div class="careers-container12">
+                <p class="careers-text109">Resume *</p>
+                <input
+                  type="text"
+                  required=""
+                  placeholder="Add a link to your resume"
+                  class="careers-textinput5 input"
+                />
+                <p class="careers-text110">
+                  <span>Have you read our</span>
+                  <span></span>
+                  <span class="careers-text113">terms and conditions</span>
+                  <span>?</span>
+                  <span>&nbsp;</span>
+                </p>
+                <input type="checkbox" required="" class="careers-checkbox" />
+                <button type="submit" class="careers-button1 button">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="Intro to Links" class="careers-container13">
+          <div class="careers-container14">
+            <img
+              id="7A"
+              alt="image"
+              src="public/playground_assets/image_2023-03-20_235546555-400h.png"
+              class="careers-image06"
+            />
+            <h1 class="careers-text116">
+              What to do if you aren't quite ready to join us?
+            </h1>
+            <p class="careers-text117">
+              <span>
+                If you want to get into web design but don't have the knowledge
+                or skills required, we have some sites that may be able to help
+                you get there.
+              </span>
+              <br />
+              <br />
+              <span>
+                See the links below and we look forward to seeing you in the
+                future
+              </span>
+              <br />
+              <br />
+            </p>
+          </div>
+        </div>
+        <div id="Links" class="careers-container15">
+          <div id="Khan Academy" class="careers-container16">
+            <div class="careers-container17">
+              <img
+                id="7B"
+                alt="image"
+                src="public/playground_assets/image_2023-03-27_143641886-300h.png"
+                class="careers-image07"
+              />
+              <h3 class="careers-text124">Khan Academy</h3>
+              <p class="careers-text125">
+                Khan Academy offers a comprehensive learning experience to
+                master HTML and CSS in no time, with a user-friendly interface
+                and engaging content. It also offers a personalized learning
+                experience where you can track your progress and earn badges as
+                you complete each lesson. It is a great resource for beginners
+                and experienced coders alike.
+              </p>
+            </div>
+            <a
+              href="https://www.khanacademy.org/computing/computer-programming/html-css"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="careers-link05 button"
+            >
+              Explore
+            </a>
+          </div>
+          <div id="Future Learn" class="careers-container18">
+            <div class="careers-container19">
+              <img
+                id="7C"
+                alt="image"
+                src="public/playground_assets/image_2023-03-27_143754021-300h.png"
+                class="careers-image08"
+              />
+              <h3 class="careers-text126">
+                <span>Future Learn</span>
+                <br />
+              </h3>
+              <p class="careers-text129">
+                Future Learns offers an introduction to web development course
+                for beginners with no prior web development experience. You will
+                learn about web development and how to use JavaScript, CSS, and
+                HTML to create your own interactive websites. By the end of the
+                course, you will have a solid foundation in web development and
+                be able to create your own websites from scratch.
+              </p>
+            </div>
+            <a
+              href="https://www.futurelearn.com/courses/introduction-to-web-development"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="careers-link06 button"
+            >
+              Explore
+            </a>
+          </div>
+          <div id="Udemy" class="careers-container20">
+            <div class="careers-container21">
+              <img
+                id="7D"
+                alt="image"
+                src="public/playground_assets/image_2023-03-27_143910499-300h.png"
+                class="careers-image09"
+              />
+              <h3 class="careers-text130">
+                <span>Udemy</span>
+                <br />
+              </h3>
+              <p class="careers-text133">
+                Click this button to go to the page for Udemy's web design
+                courses. There, you can choose from more than 500 courses taught
+                by professionals. Udemy has courses for everyone, whether you
+                are a beginner or an experienced website designer. You can find
+                the ideal course to improve your skills and advance your career
+                with courses ranging from HTML and CSS to advanced web
+                development.
+              </p>
+            </div>
+            <a
+              href="https://www.udemy.com/topic/web-design/?utm_source=adwords&amp;utm_medium=udemyads&amp;utm_campaign=Brand-Topic_la.EN_cc.UK&amp;utm_content=deal4584&amp;utm_term=_._ag_137420172658_._ad_595700732583_._kw_udemy%20web%20design_._de_c_._dm__._pl__._ti_kwd-342254861649_._li_9045039_._pd__._&amp;matchtype=b&amp;gclid=CjwKCAjw_YShBhAiEiwAMomsEFn4IoxtVnZ604xFlMErRjx41SSMYZoMXbj9zzNBvO4Rqi0E-kB-RxoCIKMQAvD_BwE"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="careers-link07 button"
+            >
+              Explore
+            </a>
+          </div>
+        </div>
+        <div id="Footer" class="careers-container22">
+          <h1 class="careers-text134">HotBeans Web</h1>
+          <h1 class="careers-text135">
+            <span>Address</span>
+            <br />
+            <span>10 Bishops Square, London,</span>
+            <br />
+            <span>E1 6EG, UK</span>
+            <br />
+          </h1>
+          <h1 class="careers-text142">
+            <span>Contact</span>
+            <br />
+            <span>07513316577</span>
+            <br />
+            <span>contactus@hotbeans.co.uk</span>
+            <br />
+          </h1>
+          <h1 class="careers-text149">
+            <span>Follow</span>
+            <br />
+          </h1>
+          <a
+            href="https://www.facebook.com/HotBeans2021"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="careers-link08"
+          >
+            <img
+              id="Facebook button 2"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204443753-300h.png"
+              class="careers-image10"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/hotbeanweb/?igshid=YmMyMTA2M2Y%3D"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="careers-link09"
+          >
+            <img
+              id="Instagram Button 2"
+              alt="image"
+              src="public/playground_assets/image_2023-03-18_204525024-300h.png"
+              class="careers-image11"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
